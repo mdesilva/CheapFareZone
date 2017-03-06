@@ -1,0 +1,81 @@
+h1 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 36px;
+	color: black;
+}
+
+h2 {
+	font-family: 'Lato',sans-serif;
+	font-size: 32px ;
+	color: black;
+}
+
+p {
+	color: black;
+}
+
+body {
+	/* background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('background.jpg'); /*adds transperency but image is not full width anymore */
+	/* background-size: cover; /*spreads the bg image across the available viewport */
+	background-color: white;
+	display: flex;
+	height: 100%; /*set height to 100% of viewport height */
+	width: 100%;
+	opacity: 1;
+	z-index: -10;
+}
+
+#header{
+	height: 10vh;
+	width: 100%;
+	display: flex;
+	align-items: center; /*center vertically */
+	border-radius: 0px 0px 35px 35px;
+	-moz-border-radius: 0px 0px 35px 35px;
+	-webkit-border-radius: 0px 0px 35px 35px;
+	border: 0px solid #000000;
+}
+
+
+#footer {
+	/* bottom: 0; 
+	position: absolute;  positions footer at bottom of screen  */ 
+	height: 5vh;
+	width: 100%;
+	background-color: transparent;
+	font-color:black;
+}
+
+
+
+#searchSection {
+	padding-top: 8%;
+	height: 60vh;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+}
+
+#tagline {
+	padding-top: 12%;
+	height: 10vh;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+#customForm {
+	padding: 5px;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+	#tagline {
+		padding-top: 0;
+	}
+
+	h1 {
+		font-size: 20px;
+	}
+}
