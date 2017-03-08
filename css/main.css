@@ -14,15 +14,20 @@ p {
 	color: white;
 }
 
-body {
-	background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('background.jpg'); /*adds transperency but image is not full width anymore */
-	background-size: cover; /*spreads the bg image across the available viewport */
+body{
+	background-color: black;
 	color: white;
 	display: flex;
 	height: 100%; /*set height to 100% of viewport height */
 	width: 100%;
 	opacity: 1;
 	z-index: -10;
+}
+
+#stage {
+	background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('background.jpg'); /*adds transperency but image is not full width anymore */
+	background-size: cover; /*spreads the bg image across the available viewport */
+	width:100%;
 }
 
 #header{
@@ -48,25 +53,41 @@ body {
 
 
 #searchSection {
-	padding-top: 8%;
+	padding-top: 1%;
 	height: 60vh;
 	justify-content: center;
-	text-align: center;
+	text-align: left;
 	align-items: center;
 }
 
 #tagline {
-	padding-top: 12%;
+	padding-top: 0;
 	height: 10vh;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
 }
 
-#customForm {
-	padding: 5px;
+.customForm {
+	padding: 2px;
 }
 
+
+#formbox {
+	-webkit-box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px solid #ffffff;
+	background-color: linear-gradient(rgba(255,255,255), rgba(255,255,255));
+}
+
+#resform {
+	width: 950px;
+}
+}
 
 @media only screen and (max-width: 768px) {
 
@@ -78,3 +99,25 @@ body {
 		font-size: 20px;
 	}
 }
+
+*{
+	padding: 2px;
+}
+
+label {
+	font-size: 12px;
+}
+
+table {
+	text-align: center;
+}
+
+.col-md-8{
+	padding-left: -15px;
+}
+
+select {
+	width: 25;
+}
+
+
