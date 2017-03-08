@@ -68,10 +68,6 @@ body{
 	text-align: center;
 }
 
-.customForm {
-	padding: 2px;
-}
-
 
 #formbox {
 	-webkit-box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
@@ -84,10 +80,6 @@ body{
 	background-color: linear-gradient(rgba(255,255,255), rgba(255,255,255));
 }
 
-#resform {
-	width: 950px;
-}
-}
 
 @media only screen and (max-width: 768px) {
 

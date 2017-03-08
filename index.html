@@ -34,15 +34,18 @@ function chgTripType(sType)
 			document.getElementById("pnlFlight2").style.display = "none";
 			document.getElementById("pnlFlight3").style.display = "none";
 			document.getElementById("returnDateOne").style.display= "none";
+            document.getElementById("datesDivider").style.display="none";
 			break;
 		}
 		case "rdbRoundTrip": {
+            document.getElementById("datesDivider").style.display="";
 			document.getElementById("returnDateOne").style.display="";
 			document.getElementById("pnlFlight2").style.display = "none";
 			document.getElementById("pnlFlight3").style.display = "none";
 			break;
 		}
 		case "rdbMultiCity" : {
+            document.getElementById("datesDivider").style.display="";
 			document.getElementById("returnDateOne").style.display="";
 			document.getElementById("pnlFlight2").style.display = "";
 			document.getElementById("pnlFlight3").style.display = "";
@@ -56,12 +59,14 @@ function chgTripType(sType)
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
-<script>
+<!-- fix and option !-->
+<script> 
 $('.datepicker').datepicker({
     format: 'mm/dd/yyyy',
+    startDate: '-3d'
 });
-</script>
 
+</script>
 
 </head>
 <body>
@@ -102,8 +107,7 @@ $('.datepicker').datepicker({
 
 <div class="col-md-8" id="formbox">
 <!-- Begin form !-->
-<div class="col-md-4">
-<div class="container">
+<div class="container" style="width:100%">
 <form name="frmAirSearch" method="post" action="https://res.perfectibe.com/process.aspx" enctype="multipart/form-data" onsubmit="return true;">
 <input type="hidden" id="AgentID" name="AgentID" value="638" />
 <input type="hidden" id="ismain" name="ismain" value="" />
@@ -131,7 +135,7 @@ Multi-City
 </div>
 </div>
 
-<div class="row form-inline customForm" id="pnlFlight1">
+<div class="row form-inline" id="pnlFlight1">
 <div class="col-md-4">
 <div class="row">
 <div class="col-lg-6">
@@ -141,6 +145,8 @@ Multi-City
 </div>
 </div>
 </div>
+</div>
+<div class="col-md-2">
 </div>
 <div class="col-md-4">
 <div class="row">
@@ -155,54 +161,27 @@ Multi-City
 </div>
 <!-- Dates and travellers !-->
 <div class="row form-inline" id="pnlFlight1">
-<div class="col-md-4" style="padding-top: 0px">
-<!--depart date  !-->
+<div class="col-md-6">
+<!--travelling dates !-->
 <div class="row">
-<div class="col-lg-6">
-<label> Departure Date </label>
-<div class="input-group date form-group" data-provide="datepicker">
-    <input type="text" class="form-control" name="txtDate1" placeholder="Departing" size=10>
-    <div class="input-group-addon">
-        <span class="glyphicon glyphicon-th"></span>
+<div class="col-lg-12">
+<label> Travel Dates </label>
+<div class="input-group input-daterange form-group" data-provide="datepicker">
+    <input type="text" class="form-control" name="txtDate1" id="departDateOne" placeholder="Departing">
+    <div class="input-group-addon" id="datesDivider" style="">
+        -
     </div>
+    <input type="text" class="form-control" name="txtDate2" id="returnDateOne" placeholder="Returning">
+</div>
+</div>
 </div>
 </div>
 
-
-<!-- return date  !-->
-<div class="col-lg-6" id="returnDateOne">
-<label> Return Date </label>
-<div class="input-group date form-group" data-provide="datepicker" id="returnDateOne" style="">
-    <input type="text" class="form-control" name="txtDate2" placeholder="Returning" size=10>
-    <div class="input-group-addon">
-        <span class="glyphicon glyphicon-th"></span>
-    </div>
-</div>
-</div>
-</div>
-</div>
 
 <div class="col-md-4">
-<!--Travellers !-->
-<table>
-<!--headings!-->
-<tr>
-<td>
-<label>Adults </br>(12+)</label>
-</td>
-<td>
-<label>Children </br> (2-11)</label>
-</td>
-<td>
-<label>Infants </br>(Under 2)</label>
-</td>
-</tr>
-
-<!--dropdowns!-->
-<tr>
-
-<td>
-<!-- Adult passengers !-->
+<div class="row">
+<div class="col-md-4">
+<label> Adults </label>
 <div class="form-group">
 <select name="ddlPaxADT" id="ddlPaxADT" class="form-control">
 <option value="0">0</option>
@@ -217,10 +196,9 @@ Multi-City
 <option value="9">9</option>
 </select>
 </div>
-</td>
-
-<td>
-<!-- Child Passengers !-->
+</div>
+<div class="col-md-4">
+<label> Children </label>
 <div class="form-group">
 <select name="ddlPaxCHD" id="ddlPaxCHD" class="form-control">
 <option value="0">0</option>
@@ -235,10 +213,9 @@ Multi-City
 <option value="9">9</option>
 </select>
 </div>
-</td>
-
-<td>
-<!--Infant Passengers !-->
+</div>
+<div class="col-md-4">
+<label> Infants  </label>
 <div class="form-group">
 <select name="ddlPaxINF" id="ddlPaxINF" class="form-control">
 <option value="0">0</option>
@@ -253,12 +230,11 @@ Multi-City
 <option value="9">9</option>
 </select>
 </div>
-</td>
-</tr>
-</table>
 </div>
-</div> 
-<!-- End Travellers and Dates !-->
+</div>
+</div>
+</div>
+
 
 <div class="row form-inline customForm" id="pnlFlight2" style="display:none">
 <div class="form-group"><!-- Depart Airport 2 !-->
@@ -271,14 +247,14 @@ Multi-City
 
 <!--depart date !-->
 <div class="input-group date form-group" data-provide="datepicker" id="form">
-    <input type="text" class="form-control" name="txtDate1" placeholder="Departing">
+    <input type="text" class="form-control" name="txtDate2" placeholder="Departing">
     <div class="input-group-addon">
         <span class="glyphicon glyphicon-th"></span>
     </div>
 </div>
 <!-- return date !-->
 <div class="input-group date form-group" data-provide="datepicker" id="form">
-    <input type="text" class="form-control" name="txtDate2" placeholder="Returning">
+    <input type="text" class="form-control" name="txtDate3" placeholder="Returning">
     <div class="input-group-addon">
         <span class="glyphicon glyphicon-th"></span>
     </div>
@@ -295,14 +271,14 @@ Multi-City
 </div>
 
 
-<div class="input-group date form-group" data-provide="datepicker" id="form">
+<div class="input-group date form-group" id="form">
     <input type="text" class="form-control" name="txtDate3" placeholder="Departing">
     <div class="input-group-addon">
         <span class="glyphicon glyphicon-th"></span>
     </div>
 </div>
 <!-- return date !-->
-<div class="input-group date form-group" data-provide="datepicker" id="form">
+<div class="input-group date form-group" id="form">
     <input type="text" class="form-control" name="txtDate3" placeholder="Returning">
     <div class="input-group-addon">
         <span class="glyphicon glyphicon-th"></span>
@@ -316,7 +292,8 @@ Multi-City
 
 <!-- Begin Options !-->
 
-<div class="col-lg-6" style="padding-left: 0px;">
+<div class="col-lg-6" style="padding-left: 15px;">
+<div class="row">
 <div class="col-md-4">
 <div class="form-group">
 <label>Class Type</label>
@@ -327,6 +304,9 @@ Multi-City
 <option value="F">First Class</option>
 </select>
 </div>
+</div>
+
+<div class="col-md-1">
 </div>
 
 <div class="col-md-4">
@@ -583,6 +563,7 @@ Multi-City
 <option value="WW">Whyalla Airlines</option>
 <option value="WF">Wideroes Flyveselskap</option>
 </select>
+</div>
 </div>
 </div>
 </div>
