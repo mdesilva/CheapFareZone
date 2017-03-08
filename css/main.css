@@ -16,7 +16,7 @@ p {
 
 body{
 	background-color: black;
-	color: white;
+	color: black;
 	display: flex;
 	height: 100%; /*set height to 100% of viewport height */
 	width: 100%;
@@ -106,6 +106,7 @@ body{
 
 label {
 	font-size: 12px;
+	color: white;
 }
 
 table {
@@ -119,5 +120,4 @@ table {
 select {
 	width: 25;
 }
-
 
