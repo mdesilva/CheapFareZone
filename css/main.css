@@ -104,6 +104,24 @@ body{
 		font-size: 10px;
 	}
 
+	* {
+		padding: 0px;
+	}
+
+	#formbox {
+	-webkit-box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
+	border-radius: 10px 10px 0px 0px;
+	-moz-border-radius: 10px 10px 0px 0px;
+	-webkit-border-radius: 10px 10px 0px 0px;
+	border: 0px solid #ffffff;
+	/*background-image: linear-gradient(rgba(64, 64, 64,1), rgba(64, 64, 64,1)) /* grey use background image regardless of whether you include an image to user linear gradient */
+	/*background-image: linear-gradient(rgba(22, 79, 140,0.7), rgba(22, 79, 140,0.7));*/
+	/*background-color: #f9f9f9; /* off white */
+	background-color: white;
+	
+}
 
 }
 
