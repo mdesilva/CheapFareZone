@@ -25,7 +25,7 @@ body{
 }
 
 #stage {
-	background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('background.jpg'); /*adds transperency but image is not full width anymore */
+	background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),url('background.jpg'); /*adds transperency but image is not full width anymore */
 	background-size: cover; /*spreads the bg image across the available viewport */
 	width:100%;
 }
@@ -53,7 +53,7 @@ body{
 
 
 #searchSection {
-	padding-top: 1%;
+	padding-top: 4%;
 	height: 60vh;
 	justify-content: center;
 	text-align: left;
@@ -78,8 +78,10 @@ body{
 	-moz-border-radius: 10px 10px 10px 10px;
 	-webkit-border-radius: 10px 10px 10px 10px;
 	border: 0px solid #ffffff;
-	background-image: linear-gradient(rgba(64, 64, 64,0.7), rgba(64, 64, 64,0.7)) /* grey use background image regardless of whether you include an image to user linear gradient */
+	/*background-image: linear-gradient(rgba(64, 64, 64,1), rgba(64, 64, 64,1)) /* grey use background image regardless of whether you include an image to user linear gradient */
 	/*background-image: linear-gradient(rgba(22, 79, 140,0.7), rgba(22, 79, 140,0.7));*/
+	/*background-color: #f9f9f9; /* off white */
+	background-image: linear-gradient(rgba(255, 255, 255,0.95), rgba(255, 255, 255,0.95));
 	
 }
 
@@ -100,21 +102,23 @@ body{
 }
 
 label {
-	font-size: 13px;
-	color: white;
+	font-size: 17px;
+	font-family: 'PT Sans', sans-serif;
+	color: #005591;
 }
 
-table {
-	text-align: center;
+a {
+	color: white ;
+}
+
+select {
+	width: 25;
 }
 
 .col-md-8{
 	padding-left: -15px;
 }
 
-select {
-	width: 25;
-}
 
 #pnlFlight2 {
 	padding-left: 15px;
@@ -124,3 +128,12 @@ select {
 	padding-left: 15px;
 }
 
+.form-control::-webkit-input-placeholder { color: black; }
+.form-control:-moz-placeholder { color: black; }
+.form-control::-moz-placeholder { color: black; }
+.form-control:-ms-input-placeholder { color: black; }
+.form-control::-webkit-input {color: black; }
+
+.form-control {
+	color: black;
+}

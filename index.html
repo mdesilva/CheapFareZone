@@ -2,14 +2,14 @@
 <head>
 <!--Bootstrap source !-->
 <!-- Latest compiled and minified CSS -->
-<title> Cheap Fare Zone Template </title>
+<title> Cheap Fare Zone </title>
 <meta charset="utf=8">
 <meta name="viewport" content="width=device-width, initial-scale=1"> <!--optimize for mobile !-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://res.perfectibe.com/css/Dropdown.css" />
 
 <!-- Fonts !-->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700i|Lato:900i">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700i|Lato:900i|PT+Sans:700">
 
 <!--Custom stylesheet !-->
 <link rel="stylesheet" href="css/main.css">
@@ -36,6 +36,13 @@ function chgTripType(sType)
 			document.getElementById("pnlFlight3").style.display = "none";
 			document.getElementById("returnDateOne").style.display= "none";
             document.getElementById("datesDivider").style.display="none";
+            document.getElementById("departLabelOne").innerHTML = "Departure Date: "; /* change html content */
+            document.getElementById("departDate2").value= ""; /*clear input value */
+            document.getElementById("departDate3").value= "";
+            document.getElementById("txtDepCity2").value= "";
+            document.getElementById("txtArrCity2").value= "";
+            document.getElementById("txtDepCity3").value= "";
+            document.getElementById("txtArrCity3").value= "";
 			break;
 		}
 		case "rdbRoundTrip": {
@@ -43,6 +50,13 @@ function chgTripType(sType)
             document.getElementById("returnDateOne").style.display="";
 			document.getElementById("pnlFlight2").style.display = "none";
 			document.getElementById("pnlFlight3").style.display = "none";
+            document.getElementById("departLabelOne").innerHTML = "Travel Dates";
+            document.getElementById("departDate2").value= ""; /*clear input value */
+            document.getElementById("departDate3").value= "";
+            document.getElementById("txtDepCity2").value= "";
+            document.getElementById("txtArrCity2").value= "";
+            document.getElementById("txtDepCity3").value= "";
+            document.getElementById("txtArrCity3").value= "";
 			break;
 		}
 		case "rdbMultiCity" : {
@@ -50,6 +64,7 @@ function chgTripType(sType)
 			document.getElementById("returnDateOne").style.display="none";
 			document.getElementById("pnlFlight2").style.display = "";
 			document.getElementById("pnlFlight3").style.display = "";
+            document.getElementById("departLabelOne").innerHTML = "Departure Date: "
 			break;
 		}
 	}
@@ -109,11 +124,11 @@ $('.input-daterange input[name="txtDate2"]').datepicker('setDate', '+7d');
 </div>
 </div>
 </header>
-<div class="row" id="tagline">
+<!--<div class="row" id="tagline">
 <div class="col-md-12">
-<h2> Find the cheapest airfares in one click </h2>
+
 </div>
-</div>
+</div>!-->
 <section id="searchSection">
 <div class="row">
 <div class="col-md-2">
@@ -123,6 +138,15 @@ $('.input-daterange input[name="txtDate2"]').datepicker('setDate', '+7d');
 <div class="col-md-8" id="formbox">
 <!-- Begin form !-->
 <div class="container" style="width:100%">
+<div class="row">
+<div class="col-md-2">
+</div>
+<div class="col-md-8">
+<h2 style="color:#00327c;"> Find the Cheapest Airfares in One Click </h2>
+</div>
+<div class="col-md-2">
+</div>
+</div>
 <form name="frmAirSearch" method="post" action="https://res.perfectibe.com/process.aspx" enctype="multipart/form-data" onsubmit="return true;">
 <input type="hidden" id="AgentID" name="AgentID" value="638" />
 <input type="hidden" id="ismain" name="ismain" value="" />
@@ -180,7 +204,7 @@ Multi-City
 <!--travelling dates !-->
 <div class="row">
 <div class="col-lg-12">
-<label> Travel Dates </label>
+<label id="departLabelOne"> Travel Dates </label>
 <div class="input-group input-daterange form-group" id="datepicker">
     <input type="text" class="form-control" name="txtDate1" id="departDateOne" placeholder="Departing">
     <div class="input-group-addon" id="datesDivider" style="">
@@ -259,14 +283,14 @@ Multi-City
 </div>
 </div>
 <div class="form-group"><!-- Depart Airport 1 !-->
-<input type="text" name="txtDepCity2" class="txtDepCity cls_autofill form-control" placeholder="Depart: Airport or City" onfocus="focusObj(this);" onblur="blurObj(this);" onchange="copyTextbox(this, document.getElementById('txtArrCity1'));" autocomplete="off" id="txtDepCity2">
+<input type="text" name="txtDepCity2" class="txtDepCity cls_autofill form-control" onfocus="focusObj(this);" onblur="blurObj(this);" onchange="copyTextbox(this, document.getElementById('txtArrCity1'));" autocomplete="off" id="txtDepCity2" placeholder="Depart: Airport">
 </div>
 <div class="form-group"><!-- Arrive Airport 2!-->
-<input type="text" name="txtArrCity2" class="txtDepCity cls_autofill form-control" placeholder="Destination: Airport or City" onfocus="focusObj(this);" onblur="blurObj(this);" onchange="copyTextbox(this, document.getElementById('txtDepCity1'));"  autocomplete="off" id="txtArrCity2">
+<input type="text" name="txtArrCity2" class="txtDepCity cls_autofill form-control"  onfocus="focusObj(this);" onblur="blurObj(this);" onchange="copyTextbox(this, document.getElementById('txtDepCity1'));"  autocomplete="off" id="txtArrCity2" placeholder="Destination: Airport"  >
 </div>
 </div>
 
-<div class="col-md-4">
+<div class="col-md-6">
 <div class="row">
 <div class="col-md-6">
 <label> Departure Date: </label>
@@ -274,7 +298,7 @@ Multi-City
 </div>
 <!--Departing Flight 2 !-->
 <div class="input-group date form-group" data-provide="datepicker" id="form">
-    <input type="text" class="form-control" name="txtDate2" placeholder="Departing">
+    <input type="text" id="departDate2" class="form-control" name="txtDate2" placeholder="Departing">
     <div class="input-group-addon">
         <span class="glyphicon glyphicon-th"></span>
     </div>
@@ -292,11 +316,11 @@ Multi-City
 </div>
 </div>
 <div class="form-group"><!-- Depart Airport 3 !-->
-<input type="text" name="txtDepCity3" class="txtDepCity cls_autofill form-control" placeholder="Depart: Airport or City" onfocus="focusObj(this);" onblur="blurObj(this);" autocomplete="off" id="txtDepCity1">
+<input type="text" name="txtDepCity3" class="txtDepCity cls_autofill form-control" placeholder="Depart: Airport" onfocus="focusObj(this);" onblur="blurObj(this);" autocomplete="off" id="txtDepCity3">
 </div>
 
 <div class="form-group"><!-- Arrive Airport 4 !-->
-<input type="text" name="txtArrCity3" class="txtDepCity cls_autofill form-control" placeholder="Destination: Airport or City" onfocus="focusObj(this);" onblur="blurObj(this);"  autocomplete="off" id="txtArrCity3">
+<input type="text" name="txtArrCity3" class="txtDepCity cls_autofill form-control" placeholder="Destination: Airport" onfocus="focusObj(this);" onblur="blurObj(this);"  autocomplete="off" id="txtArrCity3">
 </div>
 </div>
 
@@ -308,7 +332,7 @@ Multi-City
 </div>
 <!-- Departing Flight 3 !-->
 <div class="input-group date form-group" id="form" data-provide="datepicker">
-    <input type="text" class="form-control" name="txtDate3" placeholder="Departing">
+    <input type="text" id="departDate3" class="form-control" name="txtDate3" placeholder="Departing">
     <div class="input-group-addon">
         <span class="glyphicon glyphicon-th"></span>
     </div>
@@ -611,7 +635,12 @@ Multi-City
 </div>!-->
 
 <div class="col-lg-6" style="padding-top: 20px;">
-<input type="submit" value="Search" class="btnSearch btn btn-success btn-lg btnSearch" /> <!--gives input type of submit,  value of search and btn-success css class !-->
+<div class="row">
+<div class="col-md-6">
+</div>
+<div class="col-md-2">
+<input type="submit" value="Search" class="btnSearch btn btn-primary btn-lg btnSearch" /> <!--gives input type of submit,  value of search and btn-success css class !-->
+</div>
 </div>
 </div>
 </form>
