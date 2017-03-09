@@ -86,7 +86,7 @@ body{
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) { /*testing for mobile, fix max-width */
 
 	#tagline {
 		padding-top: 0;
@@ -95,6 +95,16 @@ body{
 	h1 {
 		font-size: 20px;
 	}
+
+	h2 {
+		font-size: 14px;
+	}
+
+	label {
+		font-size: 10px;
+	}
+
+
 }
 
 *{
