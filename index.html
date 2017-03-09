@@ -37,6 +37,10 @@ function chgTripType(sType)
 			document.getElementById("returnDateOne").style.display= "none";
             document.getElementById("datesDivider").style.display="none";
             document.getElementById("departLabelOne").innerHTML = "Departure Date: "; /* change html content */
+            document.getElementById("datepicker").className = "input-group date form-group"; /*change class */
+            document.getElementById("datepicker").setAttribute ("data-provide", "datepicker"); /*method that assigns a data-provide attribute to class datepicker */
+            document.getElementById("datepicker").id = "travelDateOne"; /* change id */
+            document.getElementById("departDateOne").setAttribute ("size", "55");
             document.getElementById("departDate2").value= ""; /*clear input value */
             document.getElementById("departDate3").value= "";
             document.getElementById("txtDepCity2").value= "";
@@ -57,6 +61,11 @@ function chgTripType(sType)
             document.getElementById("txtArrCity2").value= "";
             document.getElementById("txtDepCity3").value= "";
             document.getElementById("txtArrCity3").value= "";
+            document.getElementById("departDateOne").setAttribute ("size", ""); /*revert departDateOne label size to auto */
+            document.getElementById("travelDateOne").className= "input-group input-daterange form-group"; /*revert travelDateOne class name to input-daterange */
+            document.getElementById("travelDateOne").setAttribute ("data-provide", ""); /*revent data-provide attribute to null */
+            document.getElementById("travelDateOne").id = "datepicker"; /*revert travelDateOne id back to datepicker */
+
 			break;
 		}
 		case "rdbMultiCity" : {
@@ -64,7 +73,11 @@ function chgTripType(sType)
 			document.getElementById("returnDateOne").style.display="none";
 			document.getElementById("pnlFlight2").style.display = "";
 			document.getElementById("pnlFlight3").style.display = "";
-            document.getElementById("departLabelOne").innerHTML = "Departure Date: "
+            document.getElementById("departLabelOne").innerHTML = "Departure Date: ";
+            document.getElementById("datepicker").className = "input-group date form-group"; /*change class */
+            document.getElementById("datepicker").setAttribute ("data-provide", "datepicker"); /*method that assigns a data-provide attribute to class datepicker */
+            document.getElementById("datepicker").id = "travelDateOne"; /* change id */
+            document.getElementById("departDateOne").setAttribute ("size", "55");
 			break;
 		}
 	}
@@ -117,7 +130,7 @@ $('.input-daterange input[name="txtDate2"]').datepicker('setDate', '+7d');
 </div>
 <div class="collapse navbar-collapse" id="topNavbar">
 <ul class="nav nav-pills">
-<li role="presentation" class="active"><a href="#">Flights</a></li>
+<li role="presentation" class="active"><a href="http://www.cheapfarezone.com">Flights</a></li>
 <li role="presentation"> <a href="#">Hotels </a></li>
 <li role="presentation"> <a href="#">Car Rentals </a></li>
 </ul>
