@@ -11,22 +11,23 @@ h2 {
 }
 
 p {
-	color: black;
+	color: white;
 }
 
 body{
-	background-color: black;
 	color: black;
-	display: flex;
-	height: 100%; /*set height to 100% of viewport height */
-	width: 100%;
 	opacity: 1;
 	z-index: -10;
+	background-color: black;
 }
 
 #stage {
 	background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),url('background.jpg'); /*adds transperency but image is not full width anymore */
 	background-size: cover; /*spreads the bg image across the available viewport */
+	display:flex;
+	height: 100vh;
+	width:100%;
+	z-index: -10;
 }
 
 #header{
@@ -41,18 +42,10 @@ body{
 }
 
 
-#footer {
-	/* bottom: 0; 
-	position: absolute;  positions footer at bottom of screen  */ 
-	width: 100%;
-	background-color: white;
-}
-
-
 
 #searchSection {
 	padding-top: 4%;
-	height: 60vh;
+	height: 70vh;
 	justify-content: center;
 	text-align: left;
 	align-items: center;
@@ -118,12 +111,14 @@ body{
 	/*background-image: linear-gradient(rgba(22, 79, 140,0.7), rgba(22, 79, 140,0.7));*/
 	/*background-color: #f9f9f9; /* off white */
 	background-color: white;
-	
+	}
+
+	#footer {
+		display:none;
+	}
 }
 
-}
-
-*{
+* {
 	padding: 2px;
 }
 
@@ -165,22 +160,13 @@ select {
 }
 
 
-/* Wrapper for page content to push down footer */
-.wrap {
-	min-height: 100%;
-	height: auto !important;
+
+
+#footer {
+	margin-top: 3%;
 	width: 100%;
-	height: 100%;
-	/* Negative indent footer by it's height */
-	margin: 0 auto -60px;
+	height: 10vh;
+	display: flex;
+	background-color: transparent;
 }
 
-
-/* Set the fixed height of the footer here */
-#push,
-#footer {
-	height: 60px;
-}
-#footer {
-	background-color: #f5f5f5;
-}
