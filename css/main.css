@@ -1,152 +1,148 @@
+
+html,
+body {
+  height: 100%;
+  background-color: black;
+  color: white;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
 h1 {
-	font-family: 'Roboto', sans-serif !important; 
-	font-size: 36px;
-	color: white;
+  font-family: 'Roboto', sans-serif !important; 
+  font-size: 36px;
+  color: white;
 }
 
 h2 {
-	font-family: 'Lato',sans-serif !important;
-	font-size: 30px ;
-	color: white;
+  font-family: 'Lato',sans-serif !important;
+  font-size: 30px ;
+  color: white;
 }
 
 p {
-	color: white;
+  color: black;
 }
 
-body{
-	color: black;
-	opacity: 1;
-	z-index: -10;
-	background-color: black;
-}
-
-#stage {
-	background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),url('background.jpg'); /*adds transperency but image is not full width anymore */
-	background-size: cover; /*spreads the bg image across the available viewport */
-	display:flex;
-	height: 100vh;
-	width:100%;
-	z-index: -10;
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+  background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),url('background.jpg'); /*adds transperency but image is not full width anymore */
+  background-size: cover; /*spreads the bg image across the available viewport */
+  display:flex;
+  height: 100vh;
+  width:100%;
+  z-index: -10;
 }
 
 #header{
-	height: 10vh;
-	width: 100%;
-	display: flex;
-	align-items: center; /*center vertically */
-	border-radius: 0px 0px 35px 35px;
-	-moz-border-radius: 0px 0px 35px 35px;
-	-webkit-border-radius: 0px 0px 35px 35px;
-	border: 0px solid #000000;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center; /*center vertically */
+  border-radius: 0px 0px 35px 35px;
+  -moz-border-radius: 0px 0px 35px 35px;
+  -webkit-border-radius: 0px 0px 35px 35px;
+  border: 0px solid #000000;
+  margin-top: -3%;
 }
 
 
 
 #searchSection {
-	padding-top: 4%;
-	height: 70vh;
-	justify-content: center;
-	text-align: left;
-	align-items: center;
-	;
+  margin-top: 2%;
+  justify-content: center;
+  text-align: left;
+  align-items: center;
 }
-
-#tagline {
-	padding-top: 0;
-	height: 10vh;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-}
-
 
 #formbox {
-	-webkit-box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
-	box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
-	border-radius: 10px 10px 10px 10px;
-	-moz-border-radius: 10px 10px 10px 10px;
-	-webkit-border-radius: 10px 10px 10px 10px;
-	border: 0px solid #ffffff;
-	/*background-image: linear-gradient(rgba(64, 64, 64,1), rgba(64, 64, 64,1)) /* grey use background image regardless of whether you include an image to user linear gradient */
-	/*background-image: linear-gradient(rgba(22, 79, 140,0.7), rgba(22, 79, 140,0.7));*/
-	/*background-color: #f9f9f9; /* off white */
-	background-image: linear-gradient(rgba(255, 255, 255,0.95), rgba(255, 255, 255,0.95));
-	
+  -webkit-box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #ffffff;
+  /*background-image: linear-gradient(rgba(64, 64, 64,1), rgba(64, 64, 64,1)) /* grey use background image regardless of whether you include an image to user linear gradient */
+  /*background-image: linear-gradient(rgba(22, 79, 140,0.7), rgba(22, 79, 140,0.7));*/
+  background-color: #f9f9f9; /* off white */
+  background-image: linear-gradient(rgba(255, 255, 255,0.95), rgba(255, 255, 255,0.95));
+  
+}
+/* Set the fixed height of the footer here */
+#footer {
+  border-radius: 30px 30px 0px 0px;
+  -moz-border-radius: 30px 30px 0px 0px;
+  -webkit-border-radius: 30px 30px 0px 0px;
+  height: 60px;
+  background-color: transparent; /* off white */
+  color: black; /*font color */
+  margin-bottom: 0;
 }
 
 
-@media only screen and (max-width: 768px) { /*testing for mobile, fix max-width */
+#tagline {
+  padding-top: 0;
+  height: 10vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-	#tagline {
-		padding-top: 0;
-	}
 
-	h1 {
-		font-size: 20px;
-	}
 
-	h2 {
-		font-size: 14px;
-	}
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
 
-	label {
-		font-size: 8px;
-	}
+#wrap > .container {
+  padding: 60px 15px 0;
+}
 
-	* {
-		padding: 0px;
-	}
+#footer > .container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
-	#formbox {
-	-webkit-box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
-	box-shadow: 10px 10px 36px 0px rgba(0,0,0,0.75);
-	border-radius: 10px 10px 0px 0px;
-	-moz-border-radius: 10px 10px 0px 0px;
-	-webkit-border-radius: 10px 10px 0px 0px;
-	border: 0px solid #ffffff;
-	/*background-image: linear-gradient(rgba(64, 64, 64,1), rgba(64, 64, 64,1)) /* grey use background image regardless of whether you include an image to user linear gradient */
-	/*background-image: linear-gradient(rgba(22, 79, 140,0.7), rgba(22, 79, 140,0.7));*/
-	/*background-color: #f9f9f9; /* off white */
-	background-color: white;
-	}
-
-	#footer {
-		display:none;
-	}
+code {
+  font-size: 80%;
 }
 
 * {
-	padding: 2px;
+  padding: 2px;
 }
 
 label {
-	font-size: 17px;
-	font-family: 'PT Sans', sans-serif;
-	color: #005591;
+  font-size: 17px;
+  font-family: 'PT Sans', sans-serif;
+  color: #005591;
 }
 
 a {
-	color: white ;
+  color: white ;
 }
 
 select {
-	width: 25;
+  width: 25;
 }
 
 .col-md-8{
-	padding-left: -15px;
+  padding-left: -15px;
 }
 
 
 #pnlFlight2 {
-	padding-left: 15px;
+  padding-left: 15px;
 }
 
 #pnlFlight3 {
-	padding-left: 15px;
+  padding-left: 15px;
 }
 
 .form-control::-webkit-input-placeholder { color: black; }
@@ -156,17 +152,5 @@ select {
 .form-control::-webkit-input {color: black; }
 
 .form-control {
-	color: black;
+  color: black;
 }
-
-
-
-
-#footer {
-	margin-top: 3%;
-	width: 100%;
-	height: 10vh;
-	display: flex;
-	background-color: transparent;
-}
-
