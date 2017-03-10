@@ -113,10 +113,11 @@ $('.input-daterange input[name="txtDate2"]').datepicker('setDate', '+7d');
 
 </head>
 <body>
-<div class="container" id="stage">
+<div class="wrap" id="stage">
+<div class="container">
 <header>
-<div id="header">
-<div class="col-md-8">
+<div class="row" id="header">
+<div class="col-md-8" style="padding-left: 50px">
 <h1> Cheap Fare Zone</h1>
 </div>
 <div class="col-md-4">
@@ -136,6 +137,7 @@ $('.input-daterange input[name="txtDate2"]').datepicker('setDate', '+7d');
 </ul>
 </div>
 </div>
+</div>
 </header>
 <!--<div class="row" id="tagline">
 <div class="col-md-12">
@@ -144,21 +146,19 @@ $('.input-daterange input[name="txtDate2"]').datepicker('setDate', '+7d');
 </div>!-->
 <section id="searchSection">
 <div class="row">
-<div class="col-md-2">
+<div class="col-md-1">
 
 </div>
 
-<div class="col-md-8" id="formbox">
+<div class="col-md-10" id="formbox">
 <!-- Begin form !-->
 <div class="container" style="width:100%">
 <div class="row">
-<div class="col-md-2">
-</div>
-<div class="col-md-8">
+
+<div class="col-md-12" style="text-align: center">
 <h2 style="color:#00327c;"> Find the Cheapest Airfares in One Click </h2>
 </div>
-<div class="col-md-2">
-</div>
+
 </div>
 <form name="frmAirSearch" method="post" action="https://res.perfectibe.com/process.aspx" enctype="multipart/form-data" onsubmit="return true;">
 <input type="hidden" id="AgentID" name="AgentID" value="638" />
@@ -193,7 +193,7 @@ Multi-City
 <div class="col-lg-6">
 <label> Origin </label>
 <div class="form-group"><!-- Depart Airport 0  !-->
-<input type="text" name="txtDepCity1" class="txtDepCity cls_autofill form-control" value="Airport or City" defvalue="Airport or City" onfocus="focusObj(this);" onblur="blurObj(this);" onchange="copyTextbox(this, document.getElementById('txtArrCity2'));" autocomplete="off" id="txtDepCity1" placeholder="Flying From: " size="55">
+<input type="text" name="txtDepCity1" class="txtDepCity cls_autofill form-control" value="Airport or City" defvalue="Airport or City" onfocus="focusObj(this);" onblur="blurObj(this);" onchange="copyTextbox(this, document.getElementById('txtArrCity2'));" autocomplete="off" id="txtDepCity1" placeholder="Flying From: " size=55 >
 </div>
 </div>
 </div>
@@ -205,7 +205,7 @@ Multi-City
 <div class="col-lg-6">
 <label> Destination </label>
 <div class="form-group"><!-- Arrive Airport 1 !-->
-<input type="text" name="txtArrCity1" class="txtDepCity cls_autofill form-control" value="Airport or City" defvalue="Airport or City" onfocus="focusObj(this);" onblur="blurObj(this);" onchange="copyTextbox(this, document.getElementById('txtDepCity2'));" autocomplete="off" id="txtArrCity1" placeholder="Flying To: " size="40">
+<input type="text" name="txtArrCity1" class="txtDepCity cls_autofill form-control" value="Airport or City" defvalue="Airport or City" onfocus="focusObj(this);" onblur="blurObj(this);" onchange="copyTextbox(this, document.getElementById('txtDepCity2'));" autocomplete="off" id="txtArrCity1" placeholder="Flying To: " size=55>
 </div>
 </div>
 </div>
@@ -231,7 +231,7 @@ Multi-City
 
 
 <div class="col-md-4" style="text-align: center">
-<div class="row">
+<div class="row form-inline">
 <div class="col-md-4">
 <label> Adults </label>
 <div class="form-group">
@@ -652,30 +652,43 @@ Multi-City
 <div class="col-md-6">
 </div>
 <div class="col-md-2">
-<input type="submit" value="Search" class="btnSearch btn btn-primary btn-lg btnSearch" /> <!--gives input type of submit,  value of search and btn-success css class !-->
+<input type="submit" value="Search" class="btnSearch btn btn-primary btn-lg btnSearch" /> <!--gives input type of submit,  value of search and btn-primary css class !-->
 </div>
 </div>
 </div>
 </form>
-</div>
-</div>
-</div>
-<div class="col-md-2">
+
+<div class="col-md-1">
 
 </div>
 </div>
 </section>
-</div>
-<!--<div id="footer">
-<div class="row">
+
+<!--<div class="row" id="footer">
 <div class="col-md-8">
 <p> Copyright 2017 Cheap Fare Zone </p>
 </div>
 <div class="col-md-4">
+<div class="row">
+<div class="col-md-4">
 <a href="#"><p>Contact</p></a>
+</div>
+<div class="col-md-4">
 <a href="#"><p>Privacy Policy </p></a>
 </div>
 </div>
+</div>
 </div>!-->
+</div>
+<div id="push"></div>
+<div id="footer">
+<div class="container">
+<p class="muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+</div>
+</div>
+</div>
+
+
+
 </body>
 </html>
